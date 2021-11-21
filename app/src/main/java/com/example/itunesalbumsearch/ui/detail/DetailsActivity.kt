@@ -1,4 +1,4 @@
-package com.example.itunesalbumsearch.ui
+package com.example.itunesalbumsearch.ui.detail
 
 import android.os.Bundle
 import androidx.activity.viewModels

@@ -1,4 +1,4 @@
-package com.example.itunesalbumsearch.ui
+package com.example.itunesalbumsearch.ui.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

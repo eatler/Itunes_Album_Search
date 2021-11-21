@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ItunesAlbumSearch">
         <activity
-            android:name=".ui.DetailsActivity"
+            android:name=".ui.detail.DetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"

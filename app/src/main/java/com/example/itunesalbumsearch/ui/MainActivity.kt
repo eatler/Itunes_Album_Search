@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import com.example.itunesalbumsearch.R
 import com.example.itunesalbumsearch.databinding.ActivityMainBinding
+import com.example.itunesalbumsearch.ui.detail.DetailsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
