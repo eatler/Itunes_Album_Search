@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity(), AlbumAdapter.OnItemClickListener {
         })
 
         if (!viewModel.currentQuery.value.isNullOrEmpty()) {
-            searchItem.expandActionView()
             searchView.setQuery(viewModel.currentQuery.value, false)
         }
 

@@ -1,10 +1,12 @@
 package com.example.itunesalbumsearch.ui
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.itunesalbumsearch.api.AlbumResponse
 import com.example.itunesalbumsearch.data.ItunesAlbumRepository
+import dagger.assisted.Assisted
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -13,10 +15,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    private val repository: ItunesAlbumRepository
+    private val repository: ItunesAlbumRepository,
+    state: SavedStateHandle
 ) : ViewModel() {
 
-    val currentQuery = MutableLiveData<String>()
+    val currentQuery = state.getLiveData(LAST_QUERY, DEFAULT_QUERY)
     val isProgressBarLoading = MutableLiveData(false)
 
     val isNoInternet = MutableLiveData(false)
@@ -42,5 +45,10 @@ class MainActivityViewModel @Inject constructor(
                 isNoResults.value = false
             }
         }
+    }
+
+    companion object {
+        private const val DEFAULT_QUERY = "Lift your skinny fists like antennas to heaven"
+        private const val LAST_QUERY = "last_query"
     }
 }
